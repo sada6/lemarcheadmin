@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "leMarcheAdmin": {
+    "lemarcheadmin": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -85,10 +85,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "leMarcheAdmin:build:production"
+              "buildTarget": "lemarcheadmin:build:production"
             },
             "development": {
-              "buildTarget": "leMarcheAdmin:build:development"
+              "buildTarget": "lemarcheadmin:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -118,5 +118,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8806e6a6-ae4d-4b43-92c1-146809737ab4"
   }
 }
