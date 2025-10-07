@@ -11,6 +11,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes), provideFirebaseApp(() => initializeApp({ projectId: "lemarcheadmin-6e1b0", appId: "1:736508925275:web:c9f2d10c49f9e1678cb67e", storageBucket: "lemarcheadmin-6e1b0.firebasestorage.app", apiKey: "AIzaSyDKcvr_vbj5-0y_l_xuq-hP6p5cM8M1yz4", authDomain: "lemarcheadmin-6e1b0.firebaseapp.com", messagingSenderId: "736508925275", measurementId: "G-VMVHFNLV1Y", projectNumber: "736508925275", version: "2" })), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideStorage(() => getStorage())
+    provideRouter(routes), provideFirebaseApp(() => initializeApp({ projectId: "lemarcheadmin-6e1b0", appId: "1:736508925275:web:c9f2d10c49f9e1678cb67e", storageBucket: "lemarcheadmin-6e1b0.firebasestorage.app", apiKey: "AIzaSyDKcvr_vbj5-0y_l_xuq-hP6p5cM8M1yz4", authDomain: "lemarcheadmin-6e1b0.firebaseapp.com", messagingSenderId: "736508925275", measurementId: "G-VMVHFNLV1Y"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideStorage(() => getStorage())
   ]
 };
