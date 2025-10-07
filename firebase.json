@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/lemarcheadmin/browser",
+    "public": "dist/lemarcheadmin",
     "ignore": [
       "firebase.json",
       "**/.*",
