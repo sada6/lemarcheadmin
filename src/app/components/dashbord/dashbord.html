@@ -1,0 +1,90 @@
+    <div class="dashbord-container">
+        <mat-toolbar >
+            <div class="left-container">
+
+                @if((viewPoint$ | async)==='XSmall'||(viewPoint$ | async)==='Small'){
+                    <button mat-icon-button (click)="drawer?.toggle()" matTooltip="Elargir le menu"><mat-icon>menu</mat-icon></button>
+                }                
+                <a matButton routerLink="/ge-stock/sale">{{appTitre}}</a>
+            </div>
+            <img 
+                [matMenuTriggerFor]="menu"
+                [matTooltip]="'Menu de '+appTitre"
+                height="35" width="35" ngSrc="https://images.vexels.com/media/users/3/145908/raw/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg" alt="profile de l'utilisateur">
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>manage_accounts</mat-icon>
+                    <span>Gérer Votre Compte</span>
+                </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item [mat-menu-trigger-for]="thememenu">
+                    <mat-icon>dark_mode</mat-icon>
+                    <span>Apparence</span>
+                </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item>
+                    <mat-icon>logout</mat-icon>
+                    <span>Se déconnecter</span>
+                </button>
+            </mat-menu>
+            <mat-menu #thememenu="matMenu">
+                <button mat-menu-item>
+                    Thème claire
+                </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item>
+                    Theme somble
+                </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item>
+                    Thème de l'appareil
+                </button>
+            </mat-menu>
+            </mat-toolbar>
+        <mat-drawer-container autosize>
+            <mat-drawer #drawer [mode]="
+                (viewPoint$ | async)==='Large' || (viewPoint$ | async)==='XLarge' || (viewPoint$ |async)==='Medium'
+                ? 'side'
+                :'over'
+            " [opened]="
+                (viewPoint$ |async)==='Large' || (viewPoint$ |async)==='XLarge' || (viewPoint$ |async)==='Medium'
+            ">
+                <a 
+                    extended 
+                    mat-fab 
+                    extended 
+                    *ngrxLet="viewPoint$ as vw"
+                    (click)="toggleDrawer(drawer,vw)"
+                    class="link" 
+                    routerLink="/ge-stock" 
+                    routerLinkActive="active" >
+                    <mat-icon>inventory_2</mat-icon>GeStock
+                </a>
+
+                <a 
+                   mat-fab 
+                    extended 
+                    *ngrxLet="viewPoint$ as vw"
+                    (click)="toggleDrawer(drawer,vw)"
+                    class="link" 
+                    routerLink="/finance" 
+                    routerLinkActive="active">
+                    <mat-icon>attach_money</mat-icon>Finance</a>
+                <a    
+                    mat-fab 
+                    extended 
+                    *ngrxLet="viewPoint$ as vw"
+                    (click)="toggleDrawer(drawer,vw)"
+                    class="link" 
+                    routerLink="/setting" 
+                    routerLinkActive="active">
+                    <mat-icon>settings</mat-icon>Parametre</a>
+            </mat-drawer>
+            <mat-drawer-content>
+                <router-outlet></router-outlet>
+            </mat-drawer-content>
+        </mat-drawer-container>
+
+        
+    </div>
+      

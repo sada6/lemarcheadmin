@@ -1,0 +1,65 @@
+@import '@angular/material/prebuilt-themes/azure-blue.css';
+
+.active{
+  background-color: blue;
+  color: white;
+}
+
+.active-sub{
+  background-color: rgba(0, 0, 255, 0.486);
+  color: white !important;
+}
+
+.dashbord-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+mat-toolbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(240, 238, 238);
+
+    .left-container{
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+img{
+    border-radius: 50%;
+    background: lightgray;
+    cursor: pointer;
+    transition: 250ms;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+mat-drawer{
+    width: 15rem;
+    box-shadow: 1px 1px 9px rgb(221, 216, 216);
+    border-radius: 0;
+}
+
+mat-drawer-container{
+    flex-basis: 100%;
+}
+
+mat-drawer-content{
+    /* border: 3px solid red;  */
+}
+
+.link{
+    width: 100%;
+    height: 3rem;
+    border-radius: 0px;
+    margin-bottom: 0.2rem;
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: none;
+}
+
